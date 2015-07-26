@@ -76,89 +76,88 @@ In case of three axial measurements, the last part of the variable defines the a
 
 The following table shows a table with all variables in the output file. The first column in the table shows the column number of the variable, the second column shows the variable name and column three shows the source variable used to compute the value of the variable.
 
-	
-	|SubjectID|	Subject ID from subject files
-	-------------|-------------------------------
-	|Activity|	Activity ID from activity_labels.txt
-1	|TimeDomainBodyAccelerometer-Mean-X-axis|	tBodyAcc-mean()-X
-2	|TimeDomainBodyAccelerometer-Mean-Y-axis|	tBodyAcc-mean()-Y
-3	|TimeDomainBodyAccelerometer-Mean-Z-axis|	tBodyAcc-mean()-Z
-4	|TimeDomainGravityAccelerometer-Mean-X-axis|	tGravityAcc-mean()-X
-5	|TimeDomainGravityAccelerometer-Mean-Y-axis|	tGravityAcc-mean()-Y
-6	|TimeDomainGravityAccelerometer-Mean-Z-axis|	tGravityAcc-mean()-Z
-7	|TimeDomainBodyAccelerometerJerk-Mean-X-axis|	tBodyAccJerk-mean()-X
-8	|TimeDomainBodyAccelerometerJerk-Mean-Y-axis|	tBodyAccJerk-mean()-Y
-9	|TimeDomainBodyAccelerometerJerk-Mean-Z-axis|	tBodyAccJerk-mean()-Z
-10	|TimeDomainBodyGyroscope-Mean-X-axis|	tBodyGyro-mean()-X
-11	|TimeDomainBodyGyroscope-Mean-Y-axis|	tBodyGyro-mean()-Y
-12	|TimeDomainBodyGyroscope-Mean-Z-axis|	tBodyGyro-mean()-Z
-13	|TimeDomainBodyGyroscopeJerk-Mean-X-axis|	tBodyGyroJerk-mean()-X
-14	|TimeDomainBodyGyroscopeJerk-Mean-Y-axis|	tBodyGyroJerk-mean()-Y
-15	|TimeDomainBodyGyroscopeJerk-Mean-Z-axis|	tBodyGyroJerk-mean()-Z
-16	|TimeDomainBodyAccelerometerMagnitude-Mean|	tBodyAccMag-mean()
-17	|TimeDomainGravityAccelerometerMagnitude-Mean|	tGravityAccMag-mean()
-18	|TimeDomainBodyAccelerometerJerkMagnitude-Mean|	tBodyAccJerkMag-mean()
-19	|TimeDomainBodyGyroscopeMagnitude-Mean|	tBodyGyroMag-mean()
-20	|TimeDomainBodyGyroscopeJerkMagnitude-Mean|	tBodyGyroJerkMag-mean()
-21	|FrequencyDomainBodyAccelerometer-Mean-X-axis|	fBodyAcc-mean()-X
-22	|FrequencyDomainBodyAccelerometer-Mean-Y-axis|	fBodyAcc-mean()-Y
-23	|FrequencyDomainBodyAccelerometer-Mean-Z-axis|	fBodyAcc-mean()-Z
-24	|FrequencyDomainBodyAccelerometer-MeanFrequency()-X-axis|	fBodyAcc-meanFreq()-X
-25	|FrequencyDomainBodyAccelerometer-MeanFrequency()-Y-axis|	fBodyAcc-meanFreq()-Y
-26	|FrequencyDomainBodyAccelerometer-MeanFrequency()-Z-axis|	fBodyAcc-meanFreq()-Z
-27	|FrequencyDomainBodyAccelerometerJerk-Mean-X-axis|	fBodyAccJerk-mean()-X
-28	|FrequencyDomainBodyAccelerometerJerk-Mean-Y-axis|	fBodyAccJerk-mean()-Y
-29	|FrequencyDomainBodyAccelerometerJerk-Mean-Z-axis|	fBodyAccJerk-mean()-Z
-30	|FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-X-axis|	fBodyAccJerk-meanFreq()-X
-31	|FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-Y-axis|	fBodyAccJerk-meanFreq()-Y
-32	|FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-Z-axis|	fBodyAccJerk-meanFreq()-Z
-33	|FrequencyDomainBodyGyroscope-Mean-X-axis|	fBodyGyro-mean()-X
-34	|FrequencyDomainBodyGyroscope-Mean-Y-axis|	fBodyGyro-mean()-Y
-35	|FrequencyDomainBodyGyroscope-Mean-Z-axis|	fBodyGyro-mean()-Z
-36	|FrequencyDomainBodyGyroscope-MeanFrequency()-X-axis|	fBodyGyro-meanFreq()-X
-37	|FrequencyDomainBodyGyroscope-MeanFrequency()-Y-axis|	fBodyGyro-meanFreq()-Y
-38	|FrequencyDomainBodyGyroscope-MeanFrequency()-Z-axis|	fBodyGyro-meanFreq()-Z
-39	|FrequencyDomainBodyAccelerometerMagnitude-Mean|	fBodyAccMag-mean()
-40	|FrequencyDomainBodyAccelerometerMagnitude-MeanFrequency()|	fBodyAccMag-meanFreq()
-41	|FrequencyDomainBodyBodyAccelerometerJerkMagnitude-Mean|	fBodyBodyAccJerkMag-mean()
-42	|FrequencyDomainBodyBodyAccelerometerJerkMagnitude-MeanFrequency()|	fBodyBodyAccJerkMag-meanFreq()
-43	|FrequencyDomainBodyBodyGyroscopeMagnitude-Mean|	fBodyBodyGyroMag-mean()
-44	|FrequencyDomainBodyBodyGyroscopeMagnitude-MeanFrequency()|	fBodyBodyGyroMag-meanFreq()
-45	|FrequencyDomainBodyBodyGyroscopeJerkMagnitude-Mean|	fBodyBodyGyroJerkMag-mean()
-46	|FrequencyDomainBodyBodyGyroscopeJerkMagnitude-MeanFrequency()|	fBodyBodyGyroJerkMag-meanFreq()
-47	|TimeDomainBodyAccelerometer-StandardDeviation-X-axis|	tBodyAcc-std()-X
-48	|TimeDomainBodyAccelerometer-StandardDeviation-Y-axis|	tBodyAcc-std()-Y
-49	|TimeDomainBodyAccelerometer-StandardDeviation-Z-axis|	tBodyAcc-std()-Z
-50	|TimeDomainGravityAccelerometer-StandardDeviation-X-axis|	tGravityAcc-std()-X
-51	|TimeDomainGravityAccelerometer-StandardDeviation-Y-axis|	tGravityAcc-std()-Y
-52	|TimeDomainGravityAccelerometer-StandardDeviation-Z-axis|	tGravityAcc-std()-Z
-53	|TimeDomainBodyAccelerometerJerk-StandardDeviation-X-axis|	tBodyAccJerk-std()-X
-54	|TimeDomainBodyAccelerometerJerk-StandardDeviation-Y-axis|	tBodyAccJerk-std()-Y
-55	|TimeDomainBodyAccelerometerJerk-StandardDeviation-Z-axis|	tBodyAccJerk-std()-Z
-56	|TimeDomainBodyGyroscope-StandardDeviation-X-axis|	tBodyGyro-std()-X
-57	|TimeDomainBodyGyroscope-StandardDeviation-Y-axis|	tBodyGyro-std()-Y
-58	|TimeDomainBodyGyroscope-StandardDeviation-Z-axis|	tBodyGyro-std()-Z
-59	|TimeDomainBodyGyroscopeJerk-StandardDeviation-X-axis|	tBodyGyroJerk-std()-X
-60	|TimeDomainBodyGyroscopeJerk-StandardDeviation-Y-axis|	tBodyGyroJerk-std()-Y
-61	|TimeDomainBodyGyroscopeJerk-StandardDeviation-Z-axis|	tBodyGyroJerk-std()-Z
-62	|TimeDomainBodyAccelerometerMagnitude-StandardDeviation|	tBodyAccMag-std()
-63	|TimeDomainGravityAccelerometerMagnitude-StandardDeviation|	tGravityAccMag-std()
-64	|TimeDomainBodyAccelerometerJerkMagnitude-StandardDeviation|	tBodyAccJerkMag-std()
-65	|TimeDomainBodyGyroscopeMagnitude-StandardDeviation|	tBodyGyroMag-std()
-66	|TimeDomainBodyGyroscopeJerkMagnitude-StandardDeviation|	tBodyGyroJerkMag-std()
-67	|FrequencyDomainBodyAccelerometer-StandardDeviation-X-axis|	fBodyAcc-std()-X
-68	|FrequencyDomainBodyAccelerometer-StandardDeviation-Y-axis|	fBodyAcc-std()-Y
-69	|FrequencyDomainBodyAccelerometer-StandardDeviation-Z-axis|	fBodyAcc-std()-Z
-70	|FrequencyDomainBodyAccelerometerJerk-StandardDeviation-X-axis|	fBodyAccJerk-std()-X
-71	|FrequencyDomainBodyAccelerometerJerk-StandardDeviation-Y-axis|	fBodyAccJerk-std()-Y
-72	|FrequencyDomainBodyAccelerometerJerk-StandardDeviation-Z-axis|	fBodyAccJerk-std()-Z
-73	|FrequencyDomainBodyGyroscope-StandardDeviation-X-axis|	fBodyGyro-std()-X
-74	|FrequencyDomainBodyGyroscope-StandardDeviation-Y-axis|	fBodyGyro-std()-Y
-75	|FrequencyDomainBodyGyroscope-StandardDeviation-Z-axis|	fBodyGyro-std()-Z
-76	|FrequencyDomainBodyAccelerometerMagnitude-StandardDeviation|	fBodyAccMag-std()
-77	|FrequencyDomainBodyBodyAccelerometerJerkMagnitude-StandardDeviation|	fBodyBodyAccJerkMag-std()
-78	|FrequencyDomainBodyBodyGyroscopeMagnitude-StandardDeviation|	fBodyBodyGyroMag-std()
-79	|FrequencyDomainBodyBodyGyroscopeJerkMagnitude-StandardDeviation|	fBodyBodyGyroJerkMag-std()
+|    | SubjectID                                                           | Subject ID from subject files        |
+|----|---------------------------------------------------------------------|--------------------------------------|
+|    | Activity                                                            | Activity ID from activity_labels.txt |
+| 3  | TimeDomainBodyAccelerometer-Mean-X-axis                             | tBodyAcc-mean()-X                    |
+| 4  | TimeDomainBodyAccelerometer-Mean-Y-axis                             | tBodyAcc-mean()-Y                    |
+| 5  | TimeDomainBodyAccelerometer-Mean-Z-axis                             | tBodyAcc-mean()-Z                    |
+| 6  | TimeDomainGravityAccelerometer-Mean-X-axis                          | tGravityAcc-mean()-X                 |
+| 7  | TimeDomainGravityAccelerometer-Mean-Y-axis                          | tGravityAcc-mean()-Y                 |
+| 8  | TimeDomainGravityAccelerometer-Mean-Z-axis                          | tGravityAcc-mean()-Z                 |
+| 9  | TimeDomainBodyAccelerometerJerk-Mean-X-axis                         | tBodyAccJerk-mean()-X                |
+| 10 | TimeDomainBodyAccelerometerJerk-Mean-Y-axis                         | tBodyAccJerk-mean()-Y                |
+| 11 | TimeDomainBodyAccelerometerJerk-Mean-Z-axis                         | tBodyAccJerk-mean()-Z                |
+| 12 | TimeDomainBodyGyroscope-Mean-X-axis                                 | tBodyGyro-mean()-X                   |
+| 13 | TimeDomainBodyGyroscope-Mean-Y-axis                                 | tBodyGyro-mean()-Y                   |
+| 14 | TimeDomainBodyGyroscope-Mean-Z-axis                                 | tBodyGyro-mean()-Z                   |
+| 15 | TimeDomainBodyGyroscopeJerk-Mean-X-axis                             | tBodyGyroJerk-mean()-X               |
+| 16 | TimeDomainBodyGyroscopeJerk-Mean-Y-axis                             | tBodyGyroJerk-mean()-Y               |
+| 17 | TimeDomainBodyGyroscopeJerk-Mean-Z-axis                             | tBodyGyroJerk-mean()-Z               |
+| 18 | TimeDomainBodyAccelerometerMagnitude-Mean                           | tBodyAccMag-mean()                   |
+| 19 | TimeDomainGravityAccelerometerMagnitude-Mean                        | tGravityAccMag-mean()                |
+| 20 | TimeDomainBodyAccelerometerJerkMagnitude-Mean                       | tBodyAccJerkMag-mean()               |
+| 21 | TimeDomainBodyGyroscopeMagnitude-Mean                               | tBodyGyroMag-mean()                  |
+| 22 | TimeDomainBodyGyroscopeJerkMagnitude-Mean                           | tBodyGyroJerkMag-mean()              |
+| 23 | FrequencyDomainBodyAccelerometer-Mean-X-axis                        | fBodyAcc-mean()-X                    |
+| 24 | FrequencyDomainBodyAccelerometer-Mean-Y-axis                        | fBodyAcc-mean()-Y                    |
+| 25 | FrequencyDomainBodyAccelerometer-Mean-Z-axis                        | fBodyAcc-mean()-Z                    |
+| 26 | FrequencyDomainBodyAccelerometer-MeanFrequency()-X-axis             | fBodyAcc-meanFreq()-X                |
+| 27 | FrequencyDomainBodyAccelerometer-MeanFrequency()-Y-axis             | fBodyAcc-meanFreq()-Y                |
+| 28 | FrequencyDomainBodyAccelerometer-MeanFrequency()-Z-axis             | fBodyAcc-meanFreq()-Z                |
+| 29 | FrequencyDomainBodyAccelerometerJerk-Mean-X-axis                    | fBodyAccJerk-mean()-X                |
+| 30 | FrequencyDomainBodyAccelerometerJerk-Mean-Y-axis                    | fBodyAccJerk-mean()-Y                |
+| 31 | FrequencyDomainBodyAccelerometerJerk-Mean-Z-axis                    | fBodyAccJerk-mean()-Z                |
+| 32 | FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-X-axis         | fBodyAccJerk-meanFreq()-X            |
+| 33 | FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-Y-axis         | fBodyAccJerk-meanFreq()-Y            |
+| 34 | FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-Z-axis         | fBodyAccJerk-meanFreq()-Z            |
+| 35 | FrequencyDomainBodyGyroscope-Mean-X-axis                            | fBodyGyro-mean()-X                   |
+| 36 | FrequencyDomainBodyGyroscope-Mean-Y-axis                            | fBodyGyro-mean()-Y                   |
+| 37 | FrequencyDomainBodyGyroscope-Mean-Z-axis                            | fBodyGyro-mean()-Z                   |
+| 38 | FrequencyDomainBodyGyroscope-MeanFrequency()-X-axis                 | fBodyGyro-meanFreq()-X               |
+| 39 | FrequencyDomainBodyGyroscope-MeanFrequency()-Y-axis                 | fBodyGyro-meanFreq()-Y               |
+| 40 | FrequencyDomainBodyGyroscope-MeanFrequency()-Z-axis                 | fBodyGyro-meanFreq()-Z               |
+| 41 | FrequencyDomainBodyAccelerometerMagnitude-Mean                      | fBodyAccMag-mean()                   |
+| 42 | FrequencyDomainBodyAccelerometerMagnitude-MeanFrequency()           | fBodyAccMag-meanFreq()               |
+| 43 | FrequencyDomainBodyBodyAccelerometerJerkMagnitude-Mean              | fBodyBodyAccJerkMag-mean()           |
+| 44 | FrequencyDomainBodyBodyAccelerometerJerkMagnitude-MeanFrequency()   | fBodyBodyAccJerkMag-meanFreq()       |
+| 45 | FrequencyDomainBodyBodyGyroscopeMagnitude-Mean                      | fBodyBodyGyroMag-mean()              |
+| 46 | FrequencyDomainBodyBodyGyroscopeMagnitude-MeanFrequency()           | fBodyBodyGyroMag-meanFreq()          |
+| 47 | FrequencyDomainBodyBodyGyroscopeJerkMagnitude-Mean                  | fBodyBodyGyroJerkMag-mean()          |
+| 48 | FrequencyDomainBodyBodyGyroscopeJerkMagnitude-MeanFrequency()       | fBodyBodyGyroJerkMag-meanFreq()      |
+| 49 | TimeDomainBodyAccelerometer-StandardDeviation-X-axis                | tBodyAcc-std()-X                     |
+| 50 | TimeDomainBodyAccelerometer-StandardDeviation-Y-axis                | tBodyAcc-std()-Y                     |
+| 51 | TimeDomainBodyAccelerometer-StandardDeviation-Z-axis                | tBodyAcc-std()-Z                     |
+| 52 | TimeDomainGravityAccelerometer-StandardDeviation-X-axis             | tGravityAcc-std()-X                  |
+| 53 | TimeDomainGravityAccelerometer-StandardDeviation-Y-axis             | tGravityAcc-std()-Y                  |
+| 54 | TimeDomainGravityAccelerometer-StandardDeviation-Z-axis             | tGravityAcc-std()-Z                  |
+| 55 | TimeDomainBodyAccelerometerJerk-StandardDeviation-X-axis            | tBodyAccJerk-std()-X                 |
+| 56 | TimeDomainBodyAccelerometerJerk-StandardDeviation-Y-axis            | tBodyAccJerk-std()-Y                 |
+| 57 | TimeDomainBodyAccelerometerJerk-StandardDeviation-Z-axis            | tBodyAccJerk-std()-Z                 |
+| 58 | TimeDomainBodyGyroscope-StandardDeviation-X-axis                    | tBodyGyro-std()-X                    |
+| 59 | TimeDomainBodyGyroscope-StandardDeviation-Y-axis                    | tBodyGyro-std()-Y                    |
+| 60 | TimeDomainBodyGyroscope-StandardDeviation-Z-axis                    | tBodyGyro-std()-Z                    |
+| 61 | TimeDomainBodyGyroscopeJerk-StandardDeviation-X-axis                | tBodyGyroJerk-std()-X                |
+| 62 | TimeDomainBodyGyroscopeJerk-StandardDeviation-Y-axis                | tBodyGyroJerk-std()-Y                |
+| 63 | TimeDomainBodyGyroscopeJerk-StandardDeviation-Z-axis                | tBodyGyroJerk-std()-Z                |
+| 64 | TimeDomainBodyAccelerometerMagnitude-StandardDeviation              | tBodyAccMag-std()                    |
+| 65 | TimeDomainGravityAccelerometerMagnitude-StandardDeviation           | tGravityAccMag-std()                 |
+| 66 | TimeDomainBodyAccelerometerJerkMagnitude-StandardDeviation          | tBodyAccJerkMag-std()                |
+| 67 | TimeDomainBodyGyroscopeMagnitude-StandardDeviation                  | tBodyGyroMag-std()                   |
+| 68 | TimeDomainBodyGyroscopeJerkMagnitude-StandardDeviation              | tBodyGyroJerkMag-std()               |
+| 69 | FrequencyDomainBodyAccelerometer-StandardDeviation-X-axis           | fBodyAcc-std()-X                     |
+| 70 | FrequencyDomainBodyAccelerometer-StandardDeviation-Y-axis           | fBodyAcc-std()-Y                     |
+| 71 | FrequencyDomainBodyAccelerometer-StandardDeviation-Z-axis           | fBodyAcc-std()-Z                     |
+| 72 | FrequencyDomainBodyAccelerometerJerk-StandardDeviation-X-axis       | fBodyAccJerk-std()-X                 |
+| 73 | FrequencyDomainBodyAccelerometerJerk-StandardDeviation-Y-axis       | fBodyAccJerk-std()-Y                 |
+| 74 | FrequencyDomainBodyAccelerometerJerk-StandardDeviation-Z-axis       | fBodyAccJerk-std()-Z                 |
+| 75 | FrequencyDomainBodyGyroscope-StandardDeviation-X-axis               | fBodyGyro-std()-X                    |
+| 76 | FrequencyDomainBodyGyroscope-StandardDeviation-Y-axis               | fBodyGyro-std()-Y                    |
+| 77 | FrequencyDomainBodyGyroscope-StandardDeviation-Z-axis               | fBodyGyro-std()-Z                    |
+| 78 | FrequencyDomainBodyAccelerometerMagnitude-StandardDeviation         | fBodyAccMag-std()                    |
+| 79 | FrequencyDomainBodyBodyAccelerometerJerkMagnitude-StandardDeviation | fBodyBodyAccJerkMag-std()            |
+| 80 | FrequencyDomainBodyBodyGyroscopeMagnitude-StandardDeviation         | fBodyBodyGyroMag-std()               |
+| 81 | FrequencyDomainBodyBodyGyroscopeJerkMagnitude-StandardDeviation     | fBodyBodyGyroJerkMag-std()           |
 
 Column 1 of the 'tiddy dataset' holds the unmodified subject ID from the input data.
 Column 2 holds a readable activity name taken from the activity IDs in the lables file. 
