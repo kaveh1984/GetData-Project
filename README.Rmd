@@ -1,0 +1,51 @@
+---
+title: "README"
+author: "Kaveh Dianati"
+date: "July 26, 2015"
+output: html_document
+---
+# Getting and Cleaning Data Course Project
+The files in this folder provide a solution for the Coursera "Getting And Cleaning Data" course project. The course project works with the "Human Activity Recognition Using Smartphones Dataset" from the UCI Machine Learning Repository. A description of the dataset can be found [here] (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The dataset can be downloaded [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
+
+## The Script run_analysis.R
+
+The file run_analysis.R contains an R script for transforming the original dataset into a second dataset according to the following rules:
+
+1- Merge the training and the test sets to create one data set.
+2- Extract only the measurements on the mean and standard deviation for each measurement.
+3- Use descriptive activity names to name the activities in the data set
+4- Appropriately label the data set with descriptive variable names.
+5- From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+The script that I wrote requires the `{r eval=FALSE} dplyr` package.
+
+Since the assignment page says ???the code should have a file run\_analysis.R in the main directory that can be run as long as the Samsung data is in your working directory???, I assume that your working directory is the one where you have unzipped the provided data, and it therefore has the UCI HAR Dataset folder inside it. The script will then read the test and training data from the folder UCI HAR Dataset, apply the transformations listed above and write the result to the file "tidy\_data.txt" in the current working directory. The output text file can be read into a data.frame using: `{r eval=FALSE} read.table("tidy_data.txt", header = T)` 
+
+## How the Code Works
+
+### Section 1. Reading the files
+The code starts by 8 calls to the `{r eval = FALSE} read.table` function to read
+all the 8 useful files which are the ones in the 'test' and 'train' folders (2x3),
+plus 'features' and 'activity labels'. The only important point while reading the data
+is to try to already specify `{r eval = FALSE} colClasses` where useful.
+
+### Section 2. Merging the Data
+In the second section, I first assigned the factor variables from the 'activity labels'
+file to the levels in 'y\_test' and 'y_train' that were already read in as factors, in order to make them meaningful, to be used as the 'Activity' column in the final dataset (Part 3 of the Assignmnet).
+Afterwards, I first append the first two SubjectID and Activity columns to the left of the two datasets (test & train) using two call to `{r eval = FALSE} cbind`, and then make one call to `{r eval = FALSE} rbind` to build one big dataset of all observations.
+
+### Section 3. Extracting Mean and Standard Deviation Data
+Using two calls to `{r eval = FALSE} grep`, I first extract the indices of variables containing the string 'mean' or 'std' in their name. I then concatenate the two vectors of indices, and use the result to extract the variables with 'mean' or 'std' in their names from the test+train data to construct our 'dataset' of interest. I also append the two ID columns (Subject & Activity) in the beginnng of 'dataset', and thus, the +2 in my subsetting (line 32).
+Subsequently, I simplify the 'features' variable by taking the only useful column (2nd)  and only the rows  having 'mean' or 'std' in their values.
+
+### Section 4. Descriptive Variable Names
+This section substitutes abbreviated codings in variable names from the 'features' file with full readable ones. This can be done by looping through all character strings to be changed using a sub function. I have used 'CamelCase' for better readability of long variable names.
+The only complication rises for the 't' and 'f' characters at the beginning of variable names representing time/frequency domain. For these two, we first need to make sure that the 't'/'f' to be substituted comes at the beginning of the name, to make sure we do not substitue these letters in the middle of other words (lines 45, 46 in the code). 
+
+### Section 5. Tidy Dataset
+
+In order to build a 'tidy' dataset according to Hadley Wickham's principles, I used a single line of code where I finally use the powerful `{r eval = FALSE} dplyr` package and chaining. This line of code is simple and pretty self-explanatory.
+
+## The CodeBook
+
+The CodeBook.md file in this repository  describes the variables of the output data set and summaries used to calculate the values, along with units and any other relevant information.

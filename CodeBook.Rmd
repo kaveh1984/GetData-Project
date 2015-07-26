@@ -1,0 +1,169 @@
+---
+title: "CodeBook"
+author: "Kaveh Dianati"
+date: "July 26, 2015"
+output: html_document
+---
+
+# CodeBook
+
+## Input Data
+
+(Information taken from the original dataset's codebook)
+
+The input data contains data recorded from the accelerometer and the gyroscope of a smartphone while the person who carried the smartphone was performing one of the following six activities: WALKING, WALKING\_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
+
+Input Data Variables
+
+From the raw measurements, several other values were derived. The input dataset contains data for the following variables:
+
+Variable	source	domain
+tBodyAcc-XYZ	accelerometer	time
+tGravityAcc-XYZ	accelerometer	time
+tBodyAccJerk-XYZ	accelerometer	time
+tBodyAccMag	accelerometer	time
+tGravityAccMag	accelerometer	time
+tBodyAccJerkMag	accelerometer	frequency
+fBodyAcc-XYZ	accelerometer	frequency
+fBodyAccJerk-XYZ	accelerometer	frequency
+fBodyAccMag	accelerometer	frequency
+fBodyAccJerkMag	accelerometer	frequency
+tBodyGyro-XYZ	gyroscope	time
+tBodyGyroJerk-XYZ	gyroscope	time
+tBodyGyroMag	gyroscope	time
+tBodyGyroJerkMag	gyroscope	time
+fBodyGyro-XYZ	gyroscope	frequency
+fBodyGyroMag	gyroscope	frequency
+fBodyGyroJerkMag	gyroscope	frequency
+
+The table above also shows the source for each variable and the domain it belongs to. Variable names ending with XYZ denote 3-axial variables. The dataset contains one separate variable for each axis.
+
+The original sensor data was recorded at a rate of 50 Hz. The data was grouped into fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). Several functions where applied to these windows to compute the input features. The functions include:
+
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation
+and many others.
+In total, each input record contains 561 features.
+
+### Input Data Units
+
+The accelerometer data is measured in standard gravity units 'g'. The gyroscope data is measured in radians/second.
+
+The input features are normalized and bounded within the interval [-1,1]. During normalization the units have been divided by themselves so units have been cancelled.
+
+### Structure of the input data
+
+The input data is split into two subsets: a training set and a test set. Each subsets consists of three files:
+
+A features file (train/X_train.txt and test/X_test.txt) with one feature vector per row
+A label with one activity label per row (train/y_train.txt and test/y_test.txt)
+A file with a subject ID per row (train/subject_train.txt and test/subject_test.txt)
+The names of the features are listed in the file features.txt.
+
+Additionally, the input contains the file activity_labels.txt which links the class labels with their activity name.
+
+The source variables consist of the following parts:
+
+The first letter defines the domain: t for time or f for frequency
+The next part defines the source variable: BodyAcc (BodyAcceleration), GravityAcc (GravityAcceleration) or BodyGyro (BodyGyroscope)
+The next (optional) part describes the method that was used to derive the variable: Mag (Magnitued), Jerk or JerkMag (JerkMagnitude)
+The part after the dash describes the function that was used to compute the feature mean (Mean) or std (StandardDeviation)
+In case of three axial measurements, the last part of the variable defines the axis (X, Y or Z)
+
+
+## Output Variables
+
+The following table shows a table with all variables in the output file. The first column in the table shows the column number of the variable, the second column shows the variable name and column three shows the source variable used to compute the value of the variable.
+
+	
+1	SubjectID	Subject ID from subject files
+2	Activity	Activity ID from activity_labels.txt
+3	TimeDomainBodyAccelerometer-Mean-X-axis	tBodyAcc-mean()-X
+4	TimeDomainBodyAccelerometer-Mean-Y-axis	tBodyAcc-mean()-Y
+5	TimeDomainBodyAccelerometer-Mean-Z-axis	tBodyAcc-mean()-Z
+6	TimeDomainGravityAccelerometer-Mean-X-axis	tGravityAcc-mean()-X
+7	TimeDomainGravityAccelerometer-Mean-Y-axis	tGravityAcc-mean()-Y
+8	TimeDomainGravityAccelerometer-Mean-Z-axis	tGravityAcc-mean()-Z
+9	TimeDomainBodyAccelerometerJerk-Mean-X-axis	tBodyAccJerk-mean()-X
+10	TimeDomainBodyAccelerometerJerk-Mean-Y-axis	tBodyAccJerk-mean()-Y
+11	TimeDomainBodyAccelerometerJerk-Mean-Z-axis	tBodyAccJerk-mean()-Z
+12	TimeDomainBodyGyroscope-Mean-X-axis	tBodyGyro-mean()-X
+13	TimeDomainBodyGyroscope-Mean-Y-axis	tBodyGyro-mean()-Y
+14	TimeDomainBodyGyroscope-Mean-Z-axis	tBodyGyro-mean()-Z
+15	TimeDomainBodyGyroscopeJerk-Mean-X-axis	tBodyGyroJerk-mean()-X
+16	TimeDomainBodyGyroscopeJerk-Mean-Y-axis	tBodyGyroJerk-mean()-Y
+17	TimeDomainBodyGyroscopeJerk-Mean-Z-axis	tBodyGyroJerk-mean()-Z
+18	TimeDomainBodyAccelerometerMagnitude-Mean	tBodyAccMag-mean()
+19	TimeDomainGravityAccelerometerMagnitude-Mean	tGravityAccMag-mean()
+20	TimeDomainBodyAccelerometerJerkMagnitude-Mean	tBodyAccJerkMag-mean()
+21	TimeDomainBodyGyroscopeMagnitude-Mean	tBodyGyroMag-mean()
+22	TimeDomainBodyGyroscopeJerkMagnitude-Mean	tBodyGyroJerkMag-mean()
+23	FrequencyDomainBodyAccelerometer-Mean-X-axis	fBodyAcc-mean()-X
+24	FrequencyDomainBodyAccelerometer-Mean-Y-axis	fBodyAcc-mean()-Y
+25	FrequencyDomainBodyAccelerometer-Mean-Z-axis	fBodyAcc-mean()-Z
+26	FrequencyDomainBodyAccelerometer-MeanFrequency()-X-axis	fBodyAcc-meanFreq()-X
+27	FrequencyDomainBodyAccelerometer-MeanFrequency()-Y-axis	fBodyAcc-meanFreq()-Y
+28	FrequencyDomainBodyAccelerometer-MeanFrequency()-Z-axis	fBodyAcc-meanFreq()-Z
+29	FrequencyDomainBodyAccelerometerJerk-Mean-X-axis	fBodyAccJerk-mean()-X
+30	FrequencyDomainBodyAccelerometerJerk-Mean-Y-axis	fBodyAccJerk-mean()-Y
+31	FrequencyDomainBodyAccelerometerJerk-Mean-Z-axis	fBodyAccJerk-mean()-Z
+32	FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-X-axis	fBodyAccJerk-meanFreq()-X
+33	FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-Y-axis	fBodyAccJerk-meanFreq()-Y
+34	FrequencyDomainBodyAccelerometerJerk-MeanFrequency()-Z-axis	fBodyAccJerk-meanFreq()-Z
+35	FrequencyDomainBodyGyroscope-Mean-X-axis	fBodyGyro-mean()-X
+36	FrequencyDomainBodyGyroscope-Mean-Y-axis	fBodyGyro-mean()-Y
+37	FrequencyDomainBodyGyroscope-Mean-Z-axis	fBodyGyro-mean()-Z
+38	FrequencyDomainBodyGyroscope-MeanFrequency()-X-axis	fBodyGyro-meanFreq()-X
+39	FrequencyDomainBodyGyroscope-MeanFrequency()-Y-axis	fBodyGyro-meanFreq()-Y
+40	FrequencyDomainBodyGyroscope-MeanFrequency()-Z-axis	fBodyGyro-meanFreq()-Z
+41	FrequencyDomainBodyAccelerometerMagnitude-Mean	fBodyAccMag-mean()
+42	FrequencyDomainBodyAccelerometerMagnitude-MeanFrequency()	fBodyAccMag-meanFreq()
+43	FrequencyDomainBodyBodyAccelerometerJerkMagnitude-Mean	fBodyBodyAccJerkMag-mean()
+44	FrequencyDomainBodyBodyAccelerometerJerkMagnitude-MeanFrequency()	fBodyBodyAccJerkMag-meanFreq()
+45	FrequencyDomainBodyBodyGyroscopeMagnitude-Mean	fBodyBodyGyroMag-mean()
+46	FrequencyDomainBodyBodyGyroscopeMagnitude-MeanFrequency()	fBodyBodyGyroMag-meanFreq()
+47	FrequencyDomainBodyBodyGyroscopeJerkMagnitude-Mean	fBodyBodyGyroJerkMag-mean()
+48	FrequencyDomainBodyBodyGyroscopeJerkMagnitude-MeanFrequency()	fBodyBodyGyroJerkMag-meanFreq()
+49	TimeDomainBodyAccelerometer-StandardDeviation-X-axis	tBodyAcc-std()-X
+50	TimeDomainBodyAccelerometer-StandardDeviation-Y-axis	tBodyAcc-std()-Y
+51	TimeDomainBodyAccelerometer-StandardDeviation-Z-axis	tBodyAcc-std()-Z
+52	TimeDomainGravityAccelerometer-StandardDeviation-X-axis	tGravityAcc-std()-X
+53	TimeDomainGravityAccelerometer-StandardDeviation-Y-axis	tGravityAcc-std()-Y
+54	TimeDomainGravityAccelerometer-StandardDeviation-Z-axis	tGravityAcc-std()-Z
+55	TimeDomainBodyAccelerometerJerk-StandardDeviation-X-axis	tBodyAccJerk-std()-X
+56	TimeDomainBodyAccelerometerJerk-StandardDeviation-Y-axis	tBodyAccJerk-std()-Y
+57	TimeDomainBodyAccelerometerJerk-StandardDeviation-Z-axis	tBodyAccJerk-std()-Z
+58	TimeDomainBodyGyroscope-StandardDeviation-X-axis	tBodyGyro-std()-X
+59	TimeDomainBodyGyroscope-StandardDeviation-Y-axis	tBodyGyro-std()-Y
+60	TimeDomainBodyGyroscope-StandardDeviation-Z-axis	tBodyGyro-std()-Z
+61	TimeDomainBodyGyroscopeJerk-StandardDeviation-X-axis	tBodyGyroJerk-std()-X
+62	TimeDomainBodyGyroscopeJerk-StandardDeviation-Y-axis	tBodyGyroJerk-std()-Y
+63	TimeDomainBodyGyroscopeJerk-StandardDeviation-Z-axis	tBodyGyroJerk-std()-Z
+64	TimeDomainBodyAccelerometerMagnitude-StandardDeviation	tBodyAccMag-std()
+65	TimeDomainGravityAccelerometerMagnitude-StandardDeviation	tGravityAccMag-std()
+66	TimeDomainBodyAccelerometerJerkMagnitude-StandardDeviation	tBodyAccJerkMag-std()
+67	TimeDomainBodyGyroscopeMagnitude-StandardDeviation	tBodyGyroMag-std()
+68	TimeDomainBodyGyroscopeJerkMagnitude-StandardDeviation	tBodyGyroJerkMag-std()
+69	FrequencyDomainBodyAccelerometer-StandardDeviation-X-axis	fBodyAcc-std()-X
+70	FrequencyDomainBodyAccelerometer-StandardDeviation-Y-axis	fBodyAcc-std()-Y
+71	FrequencyDomainBodyAccelerometer-StandardDeviation-Z-axis	fBodyAcc-std()-Z
+72	FrequencyDomainBodyAccelerometerJerk-StandardDeviation-X-axis	fBodyAccJerk-std()-X
+73	FrequencyDomainBodyAccelerometerJerk-StandardDeviation-Y-axis	fBodyAccJerk-std()-Y
+74	FrequencyDomainBodyAccelerometerJerk-StandardDeviation-Z-axis	fBodyAccJerk-std()-Z
+75	FrequencyDomainBodyGyroscope-StandardDeviation-X-axis	fBodyGyro-std()-X
+76	FrequencyDomainBodyGyroscope-StandardDeviation-Y-axis	fBodyGyro-std()-Y
+77	FrequencyDomainBodyGyroscope-StandardDeviation-Z-axis	fBodyGyro-std()-Z
+78	FrequencyDomainBodyAccelerometerMagnitude-StandardDeviation	fBodyAccMag-std()
+79	FrequencyDomainBodyBodyAccelerometerJerkMagnitude-StandardDeviation	fBodyBodyAccJerkMag-std()
+80	FrequencyDomainBodyBodyGyroscopeMagnitude-StandardDeviation	fBodyBodyGyroMag-std()
+81	FrequencyDomainBodyBodyGyroscopeJerkMagnitude-StandardDeviation	fBodyBodyGyroJerkMag-std()
+
+Column 1 of the 'tiddy dataset' holds the unmodified subject ID from the input data.
+Column 2 holds a readable activity name taken from the activity IDs in the lables file. 
+The remaining columns hold the mean of all values for each measure for a given subject and activity.
+
+### Variable Units
+The feature means have the same units as their input data. Due to the normalization they do not have units attached see Input Data Units. Value range: [-1, 1]
+
+
