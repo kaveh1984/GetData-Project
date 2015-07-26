@@ -76,9 +76,10 @@ In case of three axial measurements, the last part of the variable defines the a
 
 The following table shows a table with all variables in the output file. The first column in the table shows the column number of the variable, the second column shows the variable name and column three shows the source variable used to compute the value of the variable.
 
-|    | SubjectID                                                           | Subject ID from subject files        |
+|    | Variable                                                            | Source Variable                      |
 |----|---------------------------------------------------------------------|--------------------------------------|
-|    | Activity                                                            | Activity ID from activity_labels.txt |
+| 1  | SubjectID                                                           | Subject ID from subject files        |
+| 2  | Activity                                                            | Activity ID from activity_labels.txt |
 | 3  | TimeDomainBodyAccelerometer-Mean-X-axis                             | tBodyAcc-mean()-X                    |
 | 4  | TimeDomainBodyAccelerometer-Mean-Y-axis                             | tBodyAcc-mean()-Y                    |
 | 5  | TimeDomainBodyAccelerometer-Mean-Z-axis                             | tBodyAcc-mean()-Z                    |
